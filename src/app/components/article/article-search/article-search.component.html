@@ -1,0 +1,14 @@
+<form class="form" [formGroup]="searchForm">
+  <div class="row">
+    <div class="col-xs-8">
+      <input name="txt" type="text" placeholder="Rechercher ..." formControlName="txt">
+    </div>
+    <div class="col-xs-2">
+    </div>
+    <div class="col-xs-2">
+      <button (click)="searchByText($event)" type="submit" class="{{buttonClass}}">
+        <clr-icon shape="search"></clr-icon>
+      </button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,14 @@
+
+<div class="row">
+    <div class="col-xs-4">
+        <article-search (searchEvent)="searchEvent($event)" *ngIf="buttonSearchClass == 'yes'"></article-search>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <article-list *ngIf="action == 'list'"></article-list>
+        <article-add *ngIf="action == 'add'" (add_action)="postEvent($event)" [code]="$code"></article-add>
+        <article-update *ngIf="action == 'update'" (update_action)="postEvent($event)" [article]="$article"></article-update>
+        <article-del *ngIf="action == 'del'" (del_action)="postEvent($event)" [article]="$article"></article-del>
+    </div>
+</div>

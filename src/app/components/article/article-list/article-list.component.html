@@ -1,0 +1,22 @@
+<!-- (clrDgRefresh)="refresh($event)"-->
+<h4>La liste des Articles</h4>
+
+<clr-datagrid (clrDgRefresh)="refresh($event)" [clrDgLoading]="loading">
+  <clr-dg-placeholder>La liste des articles est vide!!</clr-dg-placeholder>
+  <clr-dg-column>Code Article</clr-dg-column>
+  <clr-dg-column>Désignation</clr-dg-column>
+  <clr-dg-column>Code à barre</clr-dg-column>
+  <clr-dg-column>Date de Création</clr-dg-column>
+
+  <clr-dg-row *ngFor="let entity of entities">
+    <clr-dg-cell>{{entity.code}}</clr-dg-cell>
+    <clr-dg-cell>{{entity.designation}}</clr-dg-cell>
+    <clr-dg-cell>{{entity.codeABarre}}</clr-dg-cell>
+    <clr-dg-cell>{{entity.updatedAt | date:"dd/MM/yyyy"}}</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>
+    {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} des {{total}} articles
+    <clr-dg-pagination #pagination [clrDgPageSize]="10" [clrDgTotalItems]="total"></clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>

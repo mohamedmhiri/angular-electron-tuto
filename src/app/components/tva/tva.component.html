@@ -1,0 +1,15 @@
+<h3>La liste des Valeurs de TVA</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Code Tva</th>
+            <th>Valeur</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tva of entities">
+            <td>{{tva.code}}</td>
+            <td>{{tva.valeur}}</td>
+        </tr>
+    </tbody>
+</table>

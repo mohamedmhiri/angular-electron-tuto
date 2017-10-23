@@ -1,0 +1,29 @@
+<form class="form" [formGroup]="articleForm" [hidden]="submitted">
+  <section class="form-block">
+    <label>Mise à jour de l'article</label>
+    <div class="form-group">
+      <label for="articleCode">Code Article</label>
+      <input id="articleCode" type="text" size="60" formControlName="code">
+      <div class="error active" *ngIf="formErrors.code">
+        {{ formErrors.code }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="articleDesignation">Désignation</label>
+      <input id="articleDesignation" type="text" size="25" formControlName="designation">
+      <div class="error active" *ngIf="formErrors.designation">
+        {{ formErrors.designation }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="articleCodeABarre">Code à barre</label>
+      <input id="articleCodeABarre" type="text" formControlName="codeABarre">
+      <div class="error active" *ngIf="formErrors.codeABarre">
+        {{ formErrors.codeABarre }}
+      </div>
+    </div>
+    <button class="btn btn-info" (click)="onReset()">Retour</button>
+    <button class="btn btn-primary" type="submit" (click)="updateArticle()" [disabled]="articleForm.invalid">Valider</button>
+    <button class="btn btn-danger" (click)="deleteArticle()">Supprimer</button>
+  </section>
+</form>

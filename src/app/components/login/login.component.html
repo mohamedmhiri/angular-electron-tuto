@@ -1,0 +1,26 @@
+<div class="login-wrapper">
+    <form class="login" [formGroup]="loginForm">
+        <label class="title">
+            <h3 class="welcome">Bienvenu à</h3>
+            Nom de la Socièté
+        </label>
+        <div class="login-group">
+<!--            <div class="auth-source select">
+                <select id="login-auth-source-1">
+                    <option>Local Users</option>
+                    <option>Administrator</option>
+                </select>
+            </div>-->
+            <input class="username" type="text" id="login_username" placeholder="Nom d'utilisateur" formControlName="username">
+            <div class="error active" *ngIf="formErrors.username">
+                {{ formErrors.username }}
+            </div>
+            <input class="password" type="password" id="login_password" placeholder="Mot de passe" formControlName="password">
+            <div class="error active" *ngIf="formErrors.password">
+                {{ formErrors.password }}
+            </div>
+            <button type="submit" class="{{buttonMode}}" (keyup.enter)="validateLogin()" (click)="validateLogin()">S'Authentifier</button>
+<!--            *ngIf="buttonMode ? disabled : ''"
+-->        </div>
+    </form>
+</div>

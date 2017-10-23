@@ -20,9 +20,14 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.scss"
+        "styles.css",
+        "../node_modules/clarity-icons/clarity-icons.min.css",
+        "../node_modules/clarity-ui/clarity-ui.min.css"
       ],
       "scripts": [
+        "../node_modules/@webcomponents/custom-elements/custom-elements.min.js",
+        "../node_modules/clarity-icons/clarity-icons.min.js",
+        "../node_modules/auth0-js/build/auth0.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

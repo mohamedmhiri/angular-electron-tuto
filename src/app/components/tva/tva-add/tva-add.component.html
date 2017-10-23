@@ -1,0 +1,20 @@
+<form class="form" [formGroup]="tvaForm" (ngSubmit)="pushTva()" [hidden]="submitted">
+    <section class="form-block">
+        <label>Ajouter un tva</label>
+        <div class="form-group">
+            <label for="tvaCode">Code TVA</label>
+            <input id="tvaCode" type="text" formControlName="code">
+            <div class="error active" *ngIf="formErrors.code">
+                {{ formErrors.code }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="tvaValeur">Valeur TVA</label>
+            <input id="tvaValeur" type="text" formControlName="valeur">
+            <div class="error active" *ngIf="formErrors.valeur">
+                {{ formErrors.valeur }}
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="tvaForm.invalid">Valider</button>
+    </section>
+</form>
